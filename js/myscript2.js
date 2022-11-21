@@ -7,13 +7,23 @@ function standar(idIntroducido, patron) {
 }
 
 let esEspama=true;
+let paisSeleccionado=true;
 $("#pais").change(function(){
     var valor=$(this).val();
-    if(valor=="ES"){
-        esEspama=true;
+    if(valor!="select" && valor!=null){
+        console.log("aqi")
+        if(valor=="ES"){
+            esEspama=true;
+        }else{
+            esEspama=false;
+        }//Fin si
+        paisSeleccionado=true;
+        $(".parte2").show();
     }else{
-        esEspama=false;
-    }//Fin si
+        $(".parte2").hide();
+        paisSeleccionado=false;
+    }
+    
 });
 
 function activarBoton (idFormulario) {
@@ -30,7 +40,8 @@ function formulario(idFormulario){
         if(standar("#provincia", patron) &&
         standar("#direccion", patron) &&
         standar("#numero", numero) &&
-        standar("#ciudad", patron)){
+        standar("#ciudad", patron) &&
+        paisSeleccionado==true){
             if(esEspama==true){
                 if(standar("#codigo_postal", codigoPostal)){
                     activarBoton (idFormulario);

@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FC Barcelona</title>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="../js/myscript2.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>   
+    
 </head>
 <body>
-    <form>
+    <form name="contacto1" id="contacto1" method="post">
         <label for="pais">País:</label><br>
-        <select name="pais" id="pais" required>
+        <select name="pais" id="pais">
+            <option value="select">Seleccione el País</option>
             <option value="ES">España</option>
             <option value="AF">Afganistán</option>
             <option value="AL">Albania</option>
@@ -264,7 +265,7 @@
         <label for="provincia">Provincia:</label><br>
         <input type="text" id="provincia" name="provincia"><br>
 
-        <label for="direccion">Direccion:</label><br>
+        <label for="direccion">Dirección:</label><br>
         <input type="text" id="direccion" name="direccion"><br>
 
         <label for="numero">Número:</label><br>
@@ -276,8 +277,9 @@
         <label for="escalera">Escalera:</label><br>
         <input type="text" id="escalera" name="escalera"><br>
 
-        <button class="submit" disabled="true">E nviar</button>
+        <button class="submit" disabled="true">Enviar</button>
     </form>
     
 </body>
+<script type="text/javascript" src="../js/myscript2.js"></script>
 </html>

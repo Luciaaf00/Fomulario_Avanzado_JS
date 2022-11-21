@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FC Barcelona</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/myscript.js"></script>
 </head>
 <body>
-    <form>
+    <form name="contacto1" id="contacto1" method="post">
         <label for="nombre">Nombre:</label><br>
         <input type="text" id="nombre" name="nombre"><br>
 
         <label for="primer_apellido">Primer Apellido:</label><br>
-        <input type="text" id="primer_apellido" name="primer_apellido">
+        <input type="text" id="primer_apellido" name="primer_apellido"><br>
 
         <label for="segundo_apellido">Segundo Apellido:</label><br>
         <input type="text" id="segundo_apellido" name="segundo_apellido"><br>
@@ -21,8 +23,10 @@
         <input type="text" id="email" name="email"><br>
 
         <label for="email_confirmacion">Confirmación del correo electrónico:</label><br>
-        <input type="text" id="email_confirmacion" name="email_confirmacion"><br>
+        <input type="text" id="email_confirmacion" name="email_confirmacion"><br><br>
+        <button class="submit" disabled="true">Enviar</button>
     </form>
     
 </body>
+
 </html>

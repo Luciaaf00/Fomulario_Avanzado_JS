@@ -23,7 +23,6 @@ function desactivarBoton (idFormulario) {
 	$(idFormulario + " button.submit").attr("disabled", "disabled");
 }
 
-
 function formulario(idFormulario){
     $(idFormulario + " *").on("change keydown", function() {
 

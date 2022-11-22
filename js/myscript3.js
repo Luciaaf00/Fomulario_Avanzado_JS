@@ -49,6 +49,12 @@ function validacionTlf(idTlf, patron){
     return $(idTlf).val().trim().match(patron) ? true : false;
 }
 
+function validacionCheck(idCheck) {
+    return $(idCheck).is(":checked") ? true : false;
+}
+    
+
+
 
 function activarBoton (idFormulario) {
 	$(idFormulario + " button.submit").removeAttr("disabled");
@@ -62,7 +68,10 @@ function formulario(idFormulario){
     $(idFormulario + " *").on("change keydown", function() {
         if(esFechaCorrecta==true && 
         esIdentificacionCorrecta==true &&
-        validacionTlf("#tlf_movil", patronTlf)
+        validacionTlf("#tlf_movil", patronTlf) &&
+        validacionCheck("#opcion1") &&
+        validacionCheck("#opcion2") &&
+        validacionCheck("#opcion3")
         ){
             activarBoton (idFormulario);
         }else{

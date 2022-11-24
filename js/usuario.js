@@ -1,3 +1,5 @@
+
+
 var usuario ={
     Nombre: document.getElementById(nombre),
     PrimerApellido: document.getElementById(primer_apellido),
@@ -21,3 +23,17 @@ var usuario ={
 
 
 }
+//Comprobamos si el navegador es compatible
+if (typeof(Storage) !== "undefined") {
+    // LocalStorage disponible
+  } else {
+    // LocalStorage no soportado en este navegador
+  }
+  
+//Guardamos el objeto en el LocalStorage
+localStorage.setItem("usuario", JSON.stringify(usuario));
+
+//Sacamos el objeto del LocalStorage
+JSON.parse(localStorage.getItem("usuario"));
+
+  

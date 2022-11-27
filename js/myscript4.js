@@ -34,9 +34,10 @@ function desactivarBoton (idFormulario) {
 
 function formulario(idFormulario){
     $(idFormulario + " *").on("change keydown", function() {
-        if(validacionCuentaBancaria("#cuenta_bancaria")
+        if(validacionCuentaBancaria("#cuenta_bancaria", patronCuentaBancaria)
         ){
-            activarBoton (idFormulario);
+            console.log("hola");
+            activarBoton(idFormulario);
         }else{
             desactivarBoton(idFormulario);
         }//Fin Si

@@ -1,6 +1,4 @@
-/*Funcion Cargar y Mostrar datos*/
-$(document).ready(function(){    
-    $('#boton-cargar').click(function(){                       
+                      
         /*Obtener datos almacenados*/
         var nombre = localStorage.getItem("Nombre");
         var apellido1 = localStorage.getItem("Primer apellido");
@@ -21,6 +19,12 @@ $(document).ready(function(){
         var tlf_fijo = localStorage.getItem("Telefono Fijo");
         var cuenta = localStorage.getItem("Cuenta Bancaria");
         var swift = localStorage.getItem("Swift");
+
+        console.log(nombre);
+        console.log(dni);
+        console.log(prefijo);
+        console.log(tlf_movil);
+        console.log(fecha);
        
 
 
@@ -44,6 +48,4 @@ $(document).ready(function(){
         document.getElementById("tlf_fijo").innerHTML = tlf_fijo;
         document.getElementById("cuenta").innerHTML = cuenta;
         document.getElementById("swift").innerHTML = swift;
-
-    });   
-});
+ 

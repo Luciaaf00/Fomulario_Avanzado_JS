@@ -44,6 +44,21 @@ function formulario(idFormulario){
     });//Fin función
 
 }
+  
+$("#enviar4").click(function (){
+    /*Captura de datos escrito en los inputs*/        
+    var iban = document.getElementById("cuenta_bancaria").value;
+    var swift_ = document.getElementById("swift").value;
+
+    /*Guardando los datos en el LocalStorage*/
+    localStorage.setItem("Cuenta Bancaria", iban);
+    localStorage.setItem("Swift", swift_);
+
+    /*Limpiando los campos o inputs*/
+    document.getElementById("cuenta_bancaria").value = "";
+    document.getElementById("swift").value = "";
+
+ });
 $(function() {
 	formulario("#contacto1");
 });

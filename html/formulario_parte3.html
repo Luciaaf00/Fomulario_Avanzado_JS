@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FC Barcelona</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <link  rel="icon"   href="../images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="../css/styles2.css">
 </head>
 <body>
-    <form name="contacto1" id="contacto1" method="post" action="ficha.html">
-        <label for="fecha">Fecha de nacimiento:</label><br>
+    <form name="contacto1" id="contacto1" method="post" action="formulario_parte4.html">
+        <label for="fecha">*Fecha de nacimiento:</label><br>
         <input type="date" id="fecha" name="fecha"><br>
+        <p id="error_nacimiento"></p>
 
-        <label for="dni">DNI/NIE:</label><br>
+        <label for="dni">*DNI/NIE:</label><br>
         <input type="text" id="dni" name="dni"><br>
+        <p id="error_dni"></p>
 
-        <label for="prefijo">Prefijo:</label><br>
+        <label for="prefijo">*Prefijo:</label><br>
         <select  name="prefijo" id="prefijo" required>
             <option  value="+34"> España +34 </option>
             <option  value="" disabled="">   </option>
@@ -263,20 +266,21 @@
             <option  value="+358"> Åland +358 </option>
         </select><br>
 
-        <label for="tlf_movil">Teléfono móvil:</label><br>
+        <label for="tlf_movil">*Teléfono móvil:</label><br>
         <input type="text" id="tlf_movil" name="tlf_movil"><br>
+        <p id="error_tlf_movil"></p>
 
         <label for="tlf_fijo">Teléfono fijo:</label><br>
         <input type="text" id="tlf_fijo" name="tlf_fijo"><br>
 
         <input type="checkbox" id="opcion1" name="opcion1" value="basico">
-        <label for="opcion1"> He leído y acepto la Información Básica sobre Protección de Datos, así como recibir comunicaciones relacionadas exclusivamente del Club (Obligatorio)</label><br>
+        <label for="opcion1">* He leído y acepto la Información Básica sobre Protección de Datos, así como recibir comunicaciones relacionadas exclusivamente del Club (Obligatorio)</label><br>
 
         <input type="checkbox" id="opcion2" name="opcion2" value="general">
-        <label for="opcion2"> He leído y acepto las condiciones generales de uso (Obligatorio).</label><br>
+        <label for="opcion2">* He leído y acepto las condiciones generales de uso (Obligatorio).</label><br>
 
         <input type="checkbox" id="opcion3" name="opcion3" value="reglamento">
-        <label for="opcion3"> He leído y acepto el Reglamento Interno del Club (Obligatorio).</label><br>
+        <label for="opcion3">* He leído y acepto el Reglamento Interno del Club (Obligatorio).</label><br>
 
         <input type="checkbox" id="opcion4" name="opcion4" value="comercial">
         <label for="opcion4"> Deseo recibir comunicaciones comerciales sobre futuros eventos, promociones, servicios y/o productos que puedan ser de su interés relacionados con el Real Betis Balompié, SAD, tanto de los productos propios vinculados a la entidad, como de los comercializados por terceros con los que se colabore, por cualquier medio incluyendo medios electrónicos.</label><br>

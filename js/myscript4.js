@@ -1,4 +1,5 @@
 var patronCuentaBancaria= "^[A-Z]{2}[0-9]{22}$";
+var errorCuenta=document.getElementById("cuenta_error");
 
 //Función que valida la cuenta bancaria
 function validacionCuentaBancaria(idCuenta, patronCuentaBancaria){
@@ -7,18 +8,14 @@ function validacionCuentaBancaria(idCuenta, patronCuentaBancaria){
 
 
 $("#cuenta_bancaria").change(function(){
-    console.log("si");
-if(validacionCuentaBancaria("#cuenta_bancaria")){
-    console.log("so");
+if(validacionCuentaBancaria("#cuenta_bancaria", patronCuentaBancaria)){
     var resultado=document.getElementById("cuenta_bancaria").value;
-    console.log(resultado);
     var codigo_swift=resultado.substring(4,8);
-    console.log(codigo_swift);
-    
     var swift_1=obtenerSwift(codigo_swift);
-    console.log(swift_1);
     var swift_2 =document.getElementById("swift");
     swift_2.value=swift_1;
+}else{
+    errorCuenta.innerHTML = "Tiene que introducir una cuenta en la que sea dos letras y seguidamente 22 cifras ejemplo: ES1800613053112734881110";
 }
 });
 

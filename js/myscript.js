@@ -1,7 +1,11 @@
-var nombrePatron = "^[a-zA-ZáéíóúÁÉÍÓÚ-]{3,30}$";
-var apellido1Patron = "^[a-zA-ZáéíóúÁÉÍÓÚ-]{3,30}$";
-var apellido2Patron = "^[a-zA-ZáéíóúÁÉÍÓÚ-]{3,30}$";
+var patron = "^[a-zA-ZáéíóúÁÉÍÓÚ-]{3,30}$";
 var emailPatron = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$";
+var errorNombre=document.getElementById("nombre_error");
+var errorApellido1=document.getElementById("primer_apellido_error");
+var errorApellido2=document.getElementById("segundo_apellido_error");
+var errorEmail=document.getElementById("email_error1");
+var errorEmail2=document.getElementById("email_error2");
+
 
 function standar(idIntroducido, patron) {
 	return $(idIntroducido).val().trim().match(patron) ? true : false;
@@ -15,6 +19,33 @@ function confirmaEmail(idEmail, idEmail_confirmacion){
         return false;
     }
 }
+/*Validaciones*/
+$("#nombre").change(function(){
+if(!standar("#nombre", patron)){
+    errorNombre.innerHTML = "Tiene que introducir un nombre de mínimo tres letras y máximo 30 letras" 
+} 
+});
+$("#primer_apellido").change(function(){
+if(!standar("#primer_apellido", patron)){
+    errorApellido1.innerHTML = "Tiene que introducir un apellido de mínimo tres letras y máximo 30 letras" 
+} 
+});
+$("#segundo_apellido").change(function(){
+if(!standar("#segundo_apellido", patron)){
+    errorApellido2.innerHTML = "Tiene que introducir un apellido de mínimo tres letras y máximo 30 letras" 
+}
+});
+$("#email").change(function(){ 
+if(!standar("#email", emailPatron)){
+    errorEmail.innerHTML = "Tiene que introducir un email correcto ejemplo: usuario@gmail.com" 
+} 
+});
+$("#email_confirmacion").change(function(){
+if(!confirmaEmail("#email","#email_confirmacion")){
+    errorEmail2.innerHTML = "Tiene que introducir los dos emails iguales" 
+
+}
+});
 
 function activarBoton (idFormulario) {
 	$(idFormulario + " button.submit").removeAttr("disabled");
@@ -26,9 +57,9 @@ function desactivarBoton (idFormulario) {
 function formulario(idFormulario){
     $(idFormulario + " *").on("change keydown", function() {
 
-        if(standar("#nombre", nombrePatron) && 
-        standar("#primer_apellido", apellido1Patron) && 
-        standar("#segundo_apellido", apellido2Patron) && 
+        if(standar("#nombre", patron) && 
+        standar("#primer_apellido", patron) && 
+        standar("#segundo_apellido", patron) && 
         standar("#email", emailPatron) &&
         confirmaEmail("#email","#email_confirmacion")
         ){
@@ -59,6 +90,7 @@ $("#enviar1").click(function (){
                 document.getElementById("primer_apellido").value = "";
                 document.getElementById("segundo_apellido").value = "";
                 document.getElementById("email").value = "";
+                
              
              });
 $(function() {

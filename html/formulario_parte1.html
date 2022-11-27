@@ -7,28 +7,34 @@
     <title>FC Barcelona</title>
     <link rel="stylesheet" href="../css/styles.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+    <link  rel="icon"   href="../images/logo.png" type="image/png" />
 </head>
 <body>
+    <div class="cuadro">
     <form name="contacto1" id="contacto1" method="post" action="formulario_parte2.html">
-        <label for="nombre">Nombre:</label><br>
+        <label for="nombre">*Nombre:</label><br>
         <input type="text" id="nombre" name="nombre"><br>
+        <p id="nombre_error"></p>
 
-        <label for="primer_apellido">Primer Apellido:</label><br>
+        <label for="primer_apellido">*Primer Apellido:</label><br>
         <input type="text" id="primer_apellido" name="primer_apellido"><br>
+        <p id="primer_apellido_error"></p>
 
-        <label for="segundo_apellido">Segundo Apellido:</label><br>
+        <label for="segundo_apellido">*Segundo Apellido:</label><br>
         <input type="text" id="segundo_apellido" name="segundo_apellido"><br>
+        <p id="segundo_apellido_error"></p>
 
-        <label for="email">Correo electrónico:</label><br>
+        <label for="email">*Correo electrónico:</label><br>
         <input type="text" id="email" name="email"><br>
+        <p id="email_error1"></p>
 
-        <label for="email_confirmacion">Confirmación del correo electrónico:</label><br>
-        <input type="text" id="email_confirmacion" name="email_confirmacion"><br><br>
+        <label for="email_confirmacion">*Confirmación del correo electrónico:</label><br>
+        <input type="text" id="email_confirmacion" name="email_confirmacion"><br>
+        <p id="email_error2"></p><br>
         <button class="submit" id="enviar1" disabled="true">Enviar</button>
         
     </form>
-    
+    </div>
     
 </body>
 <script type="text/javascript" src="../js/myscript.js"></script>

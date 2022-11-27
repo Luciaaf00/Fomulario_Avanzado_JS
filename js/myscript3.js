@@ -1,5 +1,10 @@
 //Expresiones regulares
 var patronTlf="^[0-9]{9}$";
+//variables
+var errorNacimiento=document.getElementById("error_nacimiento");
+var errorDni=document.getElementById("error_dni");
+var errorTlfMovil=document.getElementById("error_tlf_movil");
+
 
 
 //Validación de una fecha
@@ -18,6 +23,7 @@ $("#fecha").change(function(){
         esFechaCorrecta=true;
     }else{
         esFechaCorrecta=false;
+        errorNacimiento.innerHTML = "Tiene que introducir una fecha anterior a la actual" 
     }
 });
 
@@ -31,6 +37,7 @@ $("#dni").change(function(){
     var cadena=documentoIdentificador.toString().toUpperCase();
     if(!nifExpresion.test(cadena) && !nieExpresion.test(cadena)) {
         esIdentificacionCorrecta=false;
+        errorDni.innerHTML = "Tiene que introducir un documento de identidad correcto ejemplos: 91014263C o Z2776431Z ";
     }else{
        var longitud =cadena.length-1;
         var nie = cadena.substr(0,longitud);
@@ -41,6 +48,7 @@ $("#dni").change(function(){
             esIdentificacionCorrecta=true;
         }else{
             esIdentificacionCorrecta=false;
+            errorDni.innerHTML = "Tiene que introducir un documento de identidad correcto ejemplos: 91014263C o Z2776431Z ";
         }
     }
 });
@@ -52,7 +60,13 @@ function validacionTlf(idTlf, patron){
 function validacionCheck(idCheck) {
     return $(idCheck).is(":checked") ? true : false;
 }
-    
+
+/*Validaciones*/
+$("#tlf_movil").change(function(){
+    if(!validacionTlf("#tlf_movil", patronTlf)){
+        errorTlfMovil.innerHTML = "Tiene que introducir un número de tlf válido ejemplo: 666666666" 
+    } 
+});
 
 
 

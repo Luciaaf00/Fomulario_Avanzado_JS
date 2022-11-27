@@ -1,6 +1,11 @@
 var patron = "^[a-z A-Z]{3,50}$";
 var codigoPostal="^[0-9]{5}$";
 var numero="^[0-9]{1,4}$";
+var errorCodigoPostal=document.getElementById("codigo_postal_error");
+var errorCiudad=document.getElementById("ciudad_error");
+var errorProvincia=document.getElementById("provincia_error");
+var errorDireccion=document.getElementById("direccion_error");
+var errorNumero=document.getElementById("numero_error");
 
 function standar(idIntroducido, patron) {
 	return $(idIntroducido).val().trim().match(patron) ? true : false;
@@ -25,6 +30,32 @@ $("#pais").change(function(){
     }
     
 });
+/*Validaciones*/
+$("#codigo_postal").change(function(){
+    if(!standar("#codigo_postal", codigoPostal)){
+        errorCodigoPostal.innerHTML = "Tiene que introducir un número de cinco cifras" 
+    } 
+    });
+    $("#ciudad").change(function(){
+    if(!standar("#ciudad", patron)){
+        errorCiudad.innerHTML = "Tiene que introducir una ciudad de mínimo tres letras y máximo 50 letras" 
+    } 
+    });
+    $("#provincia").change(function(){
+    if(!standar("#provincia", patron)){
+        errorProvincia.innerHTML = "Tiene que introducir una provincia de mínimo tres letras y máximo 50 letras" 
+    }
+    });
+    $("#direccion").change(function(){ 
+    if(!standar("#direccion", patron)){
+        errorDireccion.innerHTML = "Tiene que introducir una dirección de mínimo tres letras y máximo 50 letras" 
+    } 
+    });
+    $("#numero").change(function(){
+        if(!standar("#numero", numero)){
+            errorNumero.innerHTML = "Tiene que introducir un número de mínimo 1 cifra y máximo 4 cifras" 
+        } 
+    });
 
 function activarBoton (idFormulario) {
 	$(idFormulario + " button.submit").removeAttr("disabled");
@@ -86,7 +117,7 @@ $("#enviar2").click(function (){
     document.getElementById("piso").value = "";
     document.getElementById("escalera").value = "";
     document.getElementById("numero").value = "";
- 
+    
  });
 $(function() {
 	formulario("#contacto1");
